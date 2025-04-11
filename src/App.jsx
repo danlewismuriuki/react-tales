@@ -1,11 +1,17 @@
-import { Button } from "./components/List";
-
+import { Card } from "./components/List";
 
 export function App() {
   return (
     <div>
-      <Button label = "Click Me"/>
-      <Button label = "Submit"/>
+      <Card
+      title="Samurai"
+      description="A white Samurai walks among the crowd"
+      />
+
+      <Card
+      title="Konan"
+      description="A god son of zeus walks fights in the colosium"
+      />
     </div>
   )
 }
