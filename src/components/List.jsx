@@ -1,14 +1,16 @@
-export function BookItem(props) {
-    return <li>{props.book.title} by {props.book.author}</li>
+export function Movie(props) {
+    return (
+        <li>{props.title} ({props.year})</li>
+    )
 }
 
 
-export function BookList(props) {
-    return(
+export function MoviesList(props) {
+    return (
         <ul>
-            {props.bookLists.map((book) => (
-                <BookItem key={book.id} book={book}/>
-            ))}
-        </ul>
+        {props.MovieList.map((movie) =>
+        <Movie key = {movie.id} year = {movie.year} title= {movie.title}/>
+        )}
+        </ul>   
     )
 }

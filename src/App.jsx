@@ -1,19 +1,19 @@
-import { BookList } from "./components/List";
-import './App.css'
+import { MoviesList } from "./components/List";
 
-const books = [
-  { id: 1, title: "The Hobbit", author: "J.R.R. Tolkien" },
-  { id: 2, title: "1984", author: "George Orwell" },
-  { id: 3, title: "The Catcher in the Rye", author: "J.D. Salinger" }
+
+const movies = [
+  { id: 1, title: "Inception", year: 2010 },
+  { id: 2, title: "The Matrix", year: 1999 },
+  { id: 3, title: "Interstellar", year: 2014 }
 ];
 
-export function App (){
+export function App() {
   return (
     <>
-    <h1>books</h1>
-    <BookList bookLists={books}/>
+    <MoviesList MovieList = {movies}/>
     </>
   )
 }
+
 
 export default App;
