@@ -1,19 +1,16 @@
-import { MoviesList } from "./components/List";
+import { ProductList } from "./components/List";
 
-
-const movies = [
-  { id: 1, title: "Inception", year: 2010 },
-  { id: 2, title: "The Matrix", year: 1999 },
-  { id: 3, title: "Interstellar", year: 2014 }
+const products = [
+  { id: 1, name: "Laptop", price: "$999" },
+  { id: 2, name: "Headphones", price: "$199" },
+  { id: 3, name: "Smartphone", price: "$799" },
+  { id: 4, name: "Monitor", price: "$299" }
 ];
 
 export function App() {
   return (
-    <>
-    <MoviesList MovieList = {movies}/>
-    </>
+    <ProductList ProductList={products}/>
   )
 }
-
 
 export default App;

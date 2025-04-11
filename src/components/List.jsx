@@ -1,16 +1,17 @@
-export function Movie(props) {
-    return (
-        <li>{props.movie.title} ({props.movie.year})</li>
+export function Product(props) {
+    return(
+    <li>
+        {props.product.name}  {props.product.price}
+    </li>
     )
 }
 
-
-export function MoviesList(props) {
+export function ProductList(props) {
     return (
-        <ul>
-        {props.MovieList.map((movie) =>
-        <Movie key = {movie.id} movie = {movie}/>
-        )}
-        </ul>   
+    <ul>
+        {props.ProductList.map((product) => (
+            <Product key={product.id} product={product}/>
+        ))}
+    </ul>
     )
 }
