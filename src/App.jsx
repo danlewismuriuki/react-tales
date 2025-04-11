@@ -1,19 +1,22 @@
-import { Card } from "./components/List";
+function List(props) {
+  return (
+    <ul>
+      {props.animals.map((animal) => {
+        return animal.startsWith("L") ? <li key={animal}>{animal}</li> : null;
+      })}
+    </ul>
+  );
+}
 
-export function App() {
+function App() {
+  const animals = ["Lion", "Cow", "Snake", "Lizard"];
+
   return (
     <div>
-      <Card
-      title="Samurai"
-      description="A white Samurai walks among the crowd"
-      />
-
-      <Card
-      title="Konan"
-      description="A god son of zeus walks fights in the colosium"
-      />
+      <h1>Animals: </h1>
+      <List animals={animals} />
     </div>
-  )
+  );
 }
 
 export default App;
