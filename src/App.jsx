@@ -1,29 +1,17 @@
-function List(props) {
+export function Time () {
 
-  if (props.animals.length === 0) {
-    return <div>No Animals</div>
-  }
+  const currentHour = new Date().getHours();
 
-  return (
-    <ul>
-      {props.animals.map((animal) => {
-        return <li key={animal}>{animal}</li>;
-      })}
-    </ul>
-  );
+  if (currentHour < 12)
+    return <h1>Good Morning</h1>
+    else
+    return <h1>Good Evening</h1>
 }
 
-function App() {
-  // const animals = ["Lion", "Cow", "Snake", "Lizard"];
-
-  const animals = [];
-
+export function App () {
   return (
-    <div>
-      <h1>Animals: </h1>
-      <List animals={animals} />
-    </div>
-  );
+    <Time/>
+  )
 }
 
 export default App;
