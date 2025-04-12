@@ -1,21 +1,37 @@
-export function Time() {
-  const date = new Date();
-  const hour  = date.getHours();
+const animals = [
+  { id: 1, name: 'Lion' },
+  { id: 2, name: 'Leopard' },
+  { id: 3, name: 'Tiger' },
+  { id: 4, name: 'Elephant' },
+  { id: 5, name: 'Giraffe' },
+  { id: 6, name: 'Lemur' },
+  { id: 7, name: 'Zebra' },
+  { id: 8, name: 'Llama' },
+  { id: 9, name: 'Panther' },
+  { id: 10, name: 'Cheetah' },
+];
 
-  if (hour >= 6  && hour < 12) {
-    return <h1>Good Morning</h1>
+export function Animal(props) {
+  
+  if (props.animal.name.startsWith("L")) {
+    return <h1>{props.animal.name}</h1>
   }
-  else if (hour >= 12 && hour < 17) {
-    return <h1>Good Afternoon</h1>
-  }
-  else {
-  return <h1>Good Evening</h1>
+  return <h1>{props.animal.name} Does not start with L</h1>
 }
+
+export function Animals(props) {
+  return (
+  <div>
+    {props.animals.map((animal) =>  ( 
+    <Animal key={animal.id} animal={animal}/>
+    ))}
+    </div>
+  );
 }
 
 export function App () {
   return (
-    <Time />
+    <Animals animals={animals}/>
   )
 }
 
