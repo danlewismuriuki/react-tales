@@ -1,20 +1,22 @@
-export function ActionCard ({message="Defaul Messsage", actionHandler}) {
+export function HoverCard({label="This is my label", onHoverHandler}) {
   const style = {
-    backgroundColor: "lightblue"
-  }
+    color: "blue"
+}
 
-  return (
-    <div style = {style} onClick={() => actionHandler(message)}> 
-    {message}
+return (
+    <div style={style} onMouseEnter={() => onHoverHandler(label)}>
+    {label}
     </div>
   )
 }
 
 export function App() {
   return (
-    <>
-    <ActionCard message="This is an action messsage" actionHandler={(msg) => console.log(`The card says: ${msg}`)}/>
-    </>
+    <HoverCard
+    label="This HoverCard is Simple"
+    onHoverHandler={(msg) => console.log(`Hovered On: ${msg}`)}
+    />
   )
 }
+
 export default App;
