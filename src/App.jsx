@@ -1,21 +1,19 @@
-export function HoverCard({label="This is my label", onHoverHandler}) {
+export function DoubleClickCard({title="Click Twice", onDoubleClickHandler}) {
   const style = {
-    color: "blue"
-}
-
-return (
-    <div style={style} onMouseEnter={() => onHoverHandler(label)}>
-    {label}
+    color: "Black"
+  }
+  return (
+    <div style={style} onDoubleClick={() => onDoubleClickHandler(title)}>
+      {title}
     </div>
   )
 }
 
 export function App() {
   return (
-    <HoverCard
-    label="This HoverCard is Simple"
-    onHoverHandler={(msg) => console.log(`Hovered On: ${msg}`)}
-    />
+    <DoubleClickCard
+    title="Click this twice"
+    onDoubleClickHandler = {(msg) => console.log(`Please, ${msg}`)}/>
   )
 }
 
