@@ -1,29 +1,25 @@
-export function GreetingButton({text="Greet Me", color="red", fontSize=16, handleClick}) {
+export function AlertBox({message="This is a default message", bgColor, onAlert}) {
   const style = {
-    color: color,
-    fontSize: fontSize + "px",
-    cursor: "pointer"
+    backgroundColor: bgColor,
+    padding: "1rem",
+    cursor: "pointer",
+    borderRadius: "5px"
   }
 
-  const handleButtonClick = () => {
-    handleClick(`Hello from ${text}!`)
-  }
-  
-  return(
-  <button onClick={handleButtonClick} style={style}>
-    {text}
-  </button>
-  );
+  return (
+    <div style={style} onClick={onAlert(message)}>
+      {message}
+    </div>
+    )
 }
 
 export function App() {
   return (
-    <>
-    <GreetingButton handleClick={(msg) => alert(msg)} />
-    <GreetingButton text="Say Hello" handleClick={(msg) => console.log(msg)} />
-    <GreetingButton fontSize={20} color="green" handleClick={(msg) => alert(msg)} />   
-    </>
-  )
+<AlertBox
+message="Custom Alert"
+bgColor="lightCoral"
+onAlert={(msg) => alert(`Alert says: ${msg}`)}
+/>
+);
 }
-
 export default App;
