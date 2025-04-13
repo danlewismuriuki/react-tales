@@ -1,25 +1,25 @@
-export function AlertBox({message="This is a default message", bgColor, onAlert}) {
+export function Notification ({message="This is a default message", bgColor="Yellow", onClickHandler}) {
   const style = {
     backgroundColor: bgColor,
     padding: "1rem",
-    cursor: "pointer",
-    borderRadius: "5px"
+    borderRadius: "4px",
+    cursor: "pointer"
   }
-
-  return (
-    <div style={style} onClick={onAlert(message)}>
+  return(
+    <div style={style} onClick={() => onClickHandler(message)}>
       {message}
     </div>
-    )
+  );
 }
 
 export function App() {
   return (
-<AlertBox
-message="Custom Alert"
-bgColor="lightCoral"
-onAlert={(msg) => alert(`Alert says: ${msg}`)}
-/>
-);
+    <Notification
+    message="You have one message"
+    bgColor = "green"
+    onClickHandler ={(msg) => alert(`Notification says: ${msg}`)}
+    />
+  );
 }
+
 export default App;
