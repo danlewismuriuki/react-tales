@@ -1,19 +1,21 @@
-export function DoubleClickCard({title="Click Twice", onDoubleClickHandler}) {
+export function FocusInputCard({placeholder="Focus on me!", onfocusHandler}) {
+
   const style = {
-    color: "Black"
-  }
+    color: "black"
+}
+
   return (
-    <div style={style} onDoubleClick={() => onDoubleClickHandler(title)}>
-      {title}
-    </div>
+  <input style={style} onFocus={() => onfocusHandler(placeholder)}/>
   )
 }
 
+
 export function App() {
   return (
-    <DoubleClickCard
-    title="Click this twice"
-    onDoubleClickHandler = {(msg) => console.log(`Please, ${msg}`)}/>
+    <FocusInputCard
+    placeholder="Focus Again"
+    onfocusHandler={(msg) => console.log(`You should, ${msg}`)}
+    />
   )
 }
 
