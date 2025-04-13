@@ -1,37 +1,42 @@
-const animals = [
-  { id: 1, name: 'Lion' },
-  { id: 2, name: 'Leopard' },
-  { id: 3, name: 'Tiger' },
-  { id: 4, name: 'Elephant' },
-  { id: 5, name: 'Giraffe' },
-  { id: 6, name: 'Lemur' },
-  { id: 7, name: 'Zebra' },
-  { id: 8, name: 'Llama' },
-  { id: 9, name: 'Panther' },
-  { id: 10, name: 'Cheetah' },
-];
+export function Card(props) {
+    const style = {
+      color: props.bColor,
+      fontSize: props.fontSize,
+      border: "1px solid #ccc",
+      padding: '10px',
+      marginBottom: '10px'
+    };
 
-export function Animal(props) {
-  
-  if (props.animal.name.startsWith("L")) {
-    return <h1>{props.animal.name}</h1>
-  }
-  return <h1>{props.animal.name} Does not start with L</h1>
-}
-
-export function Animals(props) {
-  return (
-  <div>
-    {props.animals.map((animal) =>  ( 
-    <Animal key={animal.id} animal={animal}/>
-    ))}
-    </div>
-  );
+    return (
+      <div style = {style}>
+        <h1>{props.title}</h1>
+        <p>{props.description}</p>
+      </div>
+    )
 }
 
 export function App () {
-  return (
-    <Animals animals={animals}/>
+  return(
+    <>
+    <Card
+    title = "Yellow Card"
+    description = "This is a yellow card"
+    bColor = {'Yellow'}
+    fontSize = {16}
+    />
+    <Card
+    title = "Green Card"
+    description = "This is a Green card"
+    bColor = {'green'}
+    fontSize = {14}
+    />
+    <Card
+    title = "Black Card"
+    description = "This is a Black card"
+    bColor = {'black'}
+    fontSize = {18}
+    />
+    </>
   )
 }
 
