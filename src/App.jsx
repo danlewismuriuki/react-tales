@@ -1,12 +1,6 @@
-export function Notification ({message="This is a default message", bgColor="Yellow", onClickHandler}) {
-  const style = {
-    backgroundColor: bgColor,
-    padding: "1rem",
-    borderRadius: "4px",
-    cursor: "pointer"
-  }
-  return(
-    <div style={style} onClick={() => onClickHandler(message)}>
+export function WelcomeBox({ message = "Welcome!", handleWelcome }) {
+  return (
+    <div onClick={ () => handleWelcome(message)}>
       {message}
     </div>
   );
@@ -14,12 +8,12 @@ export function Notification ({message="This is a default message", bgColor="Yel
 
 export function App() {
   return (
-    <Notification
-    message="You have one message"
-    bgColor = "green"
-    onClickHandler ={(msg) => alert(`Notification says: ${msg}`)}
+    <WelcomeBox
+      message="Click to Welcome"
+      handleWelcome={(msg) => alert(`Message: ${msg}`)}
     />
   );
 }
+
 
 export default App;
