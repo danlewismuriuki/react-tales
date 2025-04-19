@@ -1,18 +1,19 @@
 import React, {useState} from 'react';
 
-export function Counter () {
-const [count, setCount] = useState(0);
+export function Toggle() {
+  const [toggle, setToggle]=useState(true)
+  const handleToggle = () => {
+    setToggle(!toggle);
+  };
 
-const handleClick = () => {
-  setCount(count + 1);
-};
-
-return (
-  <div>
-    <p>You clicked {count} times.</p>
-    <button onClick={handleClick}> Click me</button>
-  </div>
-)
+  return (
+    <div>
+      <p>The switch is {toggle ? 'ON': 'OFF'}</p>
+      <button onClick={handleToggle}>
+        Toggle
+      </button>
+    </div>
+  )
 }
 
-export default Counter;
+export default Toggle;
