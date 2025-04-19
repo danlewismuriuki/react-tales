@@ -1,22 +1,18 @@
-export function FocusInputCard({placeholder="Focus on me!", onfocusHandler}) {
+import React, {useState} from 'react';
 
-  const style = {
-    color: "black"
+export function Counter () {
+const [count, setCount] = useState(0);
+
+const handleClick = () => {
+  setCount(count + 1);
+};
+
+return (
+  <div>
+    <p>You clicked {count} times.</p>
+    <button onClick={handleClick}> Click me</button>
+  </div>
+)
 }
 
-  return (
-  <input style={style} onFocus={() => onfocusHandler(placeholder)}/>
-  )
-}
-
-
-export function App() {
-  return (
-    <FocusInputCard
-    placeholder="Focus Again"
-    onfocusHandler={(msg) => console.log(`You should, ${msg}`)}
-    />
-  )
-}
-
-export default App;
+export default Counter;
