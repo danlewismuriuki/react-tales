@@ -1,25 +1,36 @@
-import React from 'react';
-import './App.css';
-
-import { useState } from 'react';
+import React, {useState} from 'react'
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [Person, setPerson] = useState({firstName: 'Dan', lastName: 'Muriuki'})
 
-function addCounter() {
-  setCount(function(prev) {return prev + 1})
-}
+  const handleFirstName = (e) => {
+    setPerson(prev => ({ ...prev, firstName: e.target.value}))
+  } 
 
-function decCounter() {
-  setCount(function(prev) {return prev - 1})
-}
+  const handlelastName = (e) => {
+    setPerson(prev => ({ ...prev, lastName: e.target.value}))
+  } 
 
-  return(
-    <>
-    <h1>{count}</h1>
-    <button onClick={addCounter}>Add</button>
-    <button onClick={decCounter}>Sub</button>
-    </>
+  return (
+    <div>
+      <input
+        type="text"
+        value={Person.firstName}
+        onChange={handleFirstName}
+        placeholder='First Name'
+      />
+
+    <input
+        type="text"
+        value={Person.lastName}
+        onChange={handlelastName}
+        placeholder='Last Name'
+      />
+
+
+<h2> {`${Person.firstName} ${Person.lastName}`}</h2>
+
+    </div>
   )
 }
 
