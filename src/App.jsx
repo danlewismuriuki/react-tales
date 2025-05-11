@@ -1,28 +1,26 @@
-import React, {useState} from "react";
+import React from 'react';
+import './App.css';
 
-export function NameDisplay () {
-  const [text, setText] = useState("")
+import { useState } from 'react';
 
-  function handleInput(e) {
-    setText(e.target.value)
-  }
+function App() {
+  const [count, setCount] = useState(0);
 
-  function clearInput() {
-    setText("")
-  }
-
-
-return (
-  <div>
-    <input
-     type="text"
-     value={text}
-     onChange={handleInput}
-    />
-    <p>Typed text: {text}</p>
-    <button onClick={clearInput}>del text</button>
-  </div>
-)
+function addCounter() {
+  setCount(function(prev) {return prev + 1})
 }
 
-export default NameDisplay;
+function decCounter() {
+  setCount(function(prev) {return prev - 1})
+}
+
+  return(
+    <>
+    <h1>{count}</h1>
+    <button onClick={addCounter}>Add</button>
+    <button onClick={decCounter}>Sub</button>
+    </>
+  )
+}
+
+export default App;
