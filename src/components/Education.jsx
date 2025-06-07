@@ -44,6 +44,7 @@ function Education() {
                 placeholder="schoolName"
                 onChange={handleChange}
             />
+             <br />
             <input
                 value={formData.titleofStudy}
                 type='text'
@@ -51,6 +52,7 @@ function Education() {
                 placeholder="titleofStudy"
                 onChange={handleChange}
             />
+             <br />
             <input
                 value={formData.dateofStudy}
                 type='date'
@@ -58,6 +60,7 @@ function Education() {
                 placeholder="dateofStudy"
                 onChange={handleChange}
             />
+             <br />
             <button type="submit">Submit</button>
         </form> ) : (
             <>

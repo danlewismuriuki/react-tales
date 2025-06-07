@@ -40,6 +40,7 @@ function GeneralInfo() {
                 value={formData.name}
                 onChange={handleChange}
                 />
+                 <br />
                 <input
                 type='email'
                 name="email"
@@ -47,6 +48,7 @@ function GeneralInfo() {
                 placeholder="email"
                 onChange={handleChange}
                 />
+                 <br />
                 <input
                 type='text'
                 name="phone"
@@ -54,6 +56,7 @@ function GeneralInfo() {
                 placeholder="phone"
                 onChange={handleChange}
                 />
+                 <br />
                 <button type="submit">Submit</button>
         </form>) : (
             <div>
